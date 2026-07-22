@@ -1,0 +1,26 @@
+/*
+ * Cermin editor untuk style.css.
+ * Diterapkan di editor blok via add_editor_style().
+ */
+
+/* Link decoration */
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.1em;
+}
+
+/* Reduce widows and orphans supaya tampilan editor menyamai frontend */
+h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption, p {
+	text-wrap: pretty;
+}
+
+/* Sedingan padding supaya paragraf body di editor tidak terlalu rapat */
+.wp-block-post-content > * + * {
+	margin-top: 1.2rem;
+}
+
+/* Heading display lebih lapang saat mengedit */
+.wp-block-heading h1,
+.wp-block-heading h2 {
+	margin-block-start: 0.5rem;
+}

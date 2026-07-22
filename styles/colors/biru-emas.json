@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Biru Emas",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#FFFFFF",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#0F172A",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#1749B8",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#FCC336",
+					"name": "Accent",
+					"slug": "accent"
+				},
+				{
+					"color": "#F1F5F9",
+					"name": "Surface",
+					"slug": "surface"
+				},
+				{
+					"color": "#64748B",
+					"name": "Muted",
+					"slug": "muted"
+				},
+				{
+					"color": "color-mix(in srgb, var(--wp--preset--color--primary) 12%, transparent)",
+					"name": "Primary Soft",
+					"slug": "primary-soft"
+				},
+				{
+					"color": "color-mix(in srgb, currentColor 20%, transparent)",
+					"name": "Border",
+					"slug": "border"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,97 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Plus Jakarta + Fraunces",
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"name": "Plus Jakarta Sans",
+					"slug": "plus-jakarta-sans",
+					"fontFamily": "\"Plus Jakarta Sans\", sans-serif",
+					"fontFace": [
+						{
+							"fontFamily": "\"Plus Jakarta Sans\"",
+							"fontStyle": "normal",
+							"fontWeight": "200 800",
+							"src": [
+								"file:./assets/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.woff2"
+							]
+						}
+					]
+				},
+				{
+					"name": "Fraunces",
+					"slug": "fraunces",
+					"fontFamily": "Fraunces, serif",
+					"fontFace": [
+						{
+							"fontFamily": "Fraunces",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"src": [
+								"file:./assets/fonts/fraunces/Fraunces-VariableFont_wght.woff2"
+							]
+						}
+					]
+				}
+			],
+			"fontSizes": [
+				{
+					"fluid": false,
+					"name": "Small",
+					"size": "0.875rem",
+					"slug": "small"
+				},
+				{
+					"fluid": {
+						"min": "1rem",
+						"max": "1.125rem"
+					},
+					"name": "Medium",
+					"size": "1.125rem",
+					"slug": "medium"
+				},
+				{
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.5rem"
+					},
+					"name": "Large",
+					"size": "1.5rem",
+					"slug": "large"
+				},
+				{
+					"fluid": {
+						"min": "1.5rem",
+						"max": "2.25rem"
+					},
+					"name": "Extra Large",
+					"size": "2.25rem",
+					"slug": "x-large"
+				},
+				{
+					"fluid": {
+						"min": "2.15rem",
+						"max": "3.5rem"
+					},
+					"name": "Extra Extra Large",
+					"size": "3.5rem",
+					"slug": "xx-large"
+				}
+			]
+		}
+	},
+	"styles": {
+		"typography": {
+			"fontFamily": "var:preset|font-family|plus-jakarta-sans"
+		},
+		"elements": {
+			"heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|fraunces"
+				}
+			}
+		}
+	}
+}

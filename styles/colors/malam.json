@@ -1,0 +1,71 @@
+{
+	"$schema": "https://schemas.wp.org/wp/6.7/theme.json",
+	"version": 3,
+	"title": "Malam",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"color": "#0F172A",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#F1F5F9",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#3B82F6",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#FFB703",
+					"name": "Accent",
+					"slug": "accent"
+				},
+				{
+					"color": "#1E293B",
+					"name": "Surface",
+					"slug": "surface"
+				},
+				{
+					"color": "#94A3B8",
+					"name": "Muted",
+					"slug": "muted"
+				},
+				{
+					"color": "color-mix(in srgb, #3B82F6 12%, transparent)",
+					"name": "Primary Soft",
+					"slug": "primary-soft"
+				},
+				{
+					"color": "color-mix(in srgb, currentColor 20%, transparent)",
+					"name": "Border",
+					"slug": "border"
+				}
+			]
+		}
+	},
+	"styles": {
+		"elements": {
+			"button": {
+				"color": {
+					"background": "var:preset|color|primary",
+					"text": "var:preset|color|base"
+				},
+				":hover": {
+					"color": {
+						"background": "color-mix(in srgb, var(--wp--preset--color--primary) 85%, black)"
+					}
+				}
+			},
+			"link": {
+				"color": {
+					"text": "currentColor"
+				}
+			}
+		}
+	}
+}

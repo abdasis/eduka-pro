@@ -1,0 +1,150 @@
+/*
+ * SPMB Pro overrides for Eduka Pro theme.
+ * Scoped di bawah root SPMB; palet/typography pakai CSS var WP theme.json.
+ * Tidak override display pada .spmb-submit/.spmb-next (JS toggle data-final-step).
+ */
+
+.spmb-form-wrap {
+	max-width: var(--wp--style--global--content-size);
+	margin-inline: auto;
+}
+
+.spmb-form-wrap .spmb-form .spmb-step {
+	background-color: var(--wp--preset--color--base);
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 0.75rem;
+	padding: var(--wp--preset--spacing--50);
+}
+
+.spmb-form-wrap .spmb-form legend {
+	color: var(--wp--preset--color--contrast);
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-size: var(--wp--preset--font-size--large);
+	font-weight: 600;
+}
+
+.spmb-form-wrap .spmb-field label {
+	font-weight: 500;
+}
+
+.spmb-form-wrap .spmb-field input,
+.spmb-form-wrap .spmb-field select,
+.spmb-form-wrap .spmb-field textarea {
+	border: 1px solid var(--wp--preset--color--border);
+	border-radius: 0.5rem;
+	font-size: var(--wp--preset--font-size--medium);
+	padding: 0.625rem 0.875rem;
+}
+
+.spmb-form-wrap .spmb-field input:focus,
+.spmb-form-wrap .spmb-field select:focus,
+.spmb-form-wrap .spmb-field textarea:focus {
+	border-color: var(--wp--preset--color--primary);
+}
+
+.spmb-form-wrap .spmb-field .required,
+.spmb-form-wrap .spmb-error {
+	color: #dc2626;
+}
+
+.spmb-form-wrap .spmb-form-actions {
+	display: flex;
+	gap: 0.75rem;
+	margin-top: var(--wp--preset--spacing--40);
+}
+
+.spmb-form-wrap .spmb-form-actions button,
+.spmb-form-wrap .spmb-next,
+.spmb-form-wrap .spmb-submit,
+.spmb-form-wrap .spmb-prev {
+	border-radius: 0.5rem;
+	font-weight: 600;
+	padding: 0.75rem 1.5rem;
+}
+
+.spmb-form-wrap .spmb-next,
+.spmb-form-wrap .spmb-submit {
+	background-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+}
+
+.spmb-form-wrap .spmb-next:hover,
+.spmb-form-wrap .spmb-submit:hover {
+	background-color: color-mix(in srgb, var(--wp--preset--color--primary) 85%, black);
+}
+
+.spmb-form-wrap .spmb-prev {
+	background-color: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--contrast);
+}
+
+.spmb-form-wrap .spmb-notice-success {
+	background-color: color-mix(in srgb, #16a34a 12%, var(--wp--preset--color--base));
+	border: 1px solid #16a34a;
+	border-radius: 0.75rem;
+	color: #166534;
+}
+
+.spmb-form-wrap .spmb-notice-error {
+	background-color: color-mix(in srgb, #dc2626 12%, var(--wp--preset--color--base));
+	border: 1px solid #dc2626;
+	border-radius: 0.75rem;
+	color: #991b1b;
+}
+
+.spmb-form-wrap .spmb-reg-number {
+	background-color: var(--wp--preset--color--surface);
+	border: 2px dashed var(--wp--preset--color--primary);
+	border-radius: 0.5rem;
+	font-family: var(--wp--preset--font-family--fraunces);
+}
+
+.spmb-form-wrap .spmb-status-table th {
+	background-color: var(--wp--preset--color--surface);
+	border: 1px solid var(--wp--preset--color--border);
+	color: var(--wp--preset--color--contrast);
+	font-weight: 600;
+}
+
+.spmb-form-wrap .spmb-status-table td {
+	border: 1px solid var(--wp--preset--color--border);
+}
+
+.spmb-form-wrap .spmb-status-result {
+	border-radius: 0.75rem;
+}
+
+.spmb-form-wrap .spmb-result-badge {
+	border-radius: 0.5rem;
+	font-family: var(--wp--preset--font-family--fraunces);
+	font-weight: 700;
+}
+
+.spmb-form-wrap .spmb-result-diterima {
+	background-color: color-mix(in srgb, #16a34a 15%, var(--wp--preset--color--base));
+	border: 1px solid #16a34a;
+	color: #166534;
+}
+
+.spmb-form-wrap .spmb-result-cadangan {
+	background-color: color-mix(in srgb, var(--wp--preset--color--accent) 15%, var(--wp--preset--color--base));
+	border: 1px solid var(--wp--preset--color--accent);
+	color: #8a6d1a;
+}
+
+.spmb-form-wrap .spmb-result-tidak_lolos {
+	background-color: color-mix(in srgb, #dc2626 15%, var(--wp--preset--color--base));
+	border: 1px solid #dc2626;
+	color: #991b1b;
+}
+
+.spmb-form-wrap .spmb-result-pending {
+	background-color: var(--wp--preset--color--surface);
+	border: 1px solid var(--wp--preset--color--muted);
+	color: var(--wp--preset--color--muted);
+}
+
+.spmb-tracking-wrap {
+	max-width: var(--wp--style--global--content-size);
+	margin-inline: auto;
+}
