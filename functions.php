@@ -108,11 +108,21 @@ if ( ! function_exists( 'edukapro_header_styles' ) ) :
 	 * @since Eduka Pro 1.0
 	 */
 	function edukapro_header_styles() {
+		$ver = wp_get_theme()->get( 'Version' );
+
 		wp_enqueue_style(
 			'edukapro-header',
 			get_theme_file_uri( 'assets/css/header.css' ),
 			array( 'edukapro-style' ),
-			wp_get_theme()->get( 'Version' )
+			$ver
+		);
+
+		wp_enqueue_script(
+			'edukapro-header',
+			get_theme_file_uri( 'assets/js/header.js' ),
+			array(),
+			$ver,
+			true
 		);
 	}
 endif;

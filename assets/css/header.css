@@ -13,14 +13,43 @@
 	-webkit-backdrop-filter: saturate(180%) blur(8px);
 	background-color: color-mix(in srgb, var(--wp--preset--color--base) 85%, transparent);
 	border-bottom: 1px solid var(--wp--preset--color--border);
-	transition: background-color 200ms ease, border-color 200ms ease;
+	transition: background-color 250ms cubic-bezier(0.23, 1, 0.32, 1), border-color 250ms cubic-bezier(0.23, 1, 0.32, 1), backdrop-filter 250ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 250ms cubic-bezier(0.23, 1, 0.32, 1);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-/* Top bar: strip gelap, teks base, link muted-on-dark. */
+/* Top bar: strip gelap, teks base, link muted-on-dark.
+   Grid-template-rows transition untuk collapse mulus (hindari layout shift). */
 .edukapro-topbar {
 	font-size: var(--wp--preset--font-size--small);
+	display: grid;
+	grid-template-rows: 1fr;
+	transition: grid-template-rows 250ms cubic-bezier(0.23, 1, 0.32, 1), opacity 250ms cubic-bezier(0.23, 1, 0.32, 1);
+	overflow: hidden;
+}
+
+.edukapro-topbar > .wp-block-group {
+	opacity: 1;
+	transition: opacity 200ms cubic-bezier(0.23, 1, 0.32, 1);
+	min-height: 0;
+}
+
+/* Scrolled state: wrapper lebih solid, blur lebih kuat, shadow halus. */
+.edukapro-header-wrap.is-scrolled {
+	backdrop-filter: saturate(180%) blur(12px);
+	-webkit-backdrop-filter: saturate(180%) blur(12px);
+	background-color: color-mix(in srgb, var(--wp--preset--color--base) 92%, transparent);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* Scrolled: sembunyikan top bar mulus (grid collapse + fade). */
+.edukapro-header-wrap.is-scrolled .edukapro-topbar {
+	grid-template-rows: 0fr;
+	opacity: 0;
+}
+
+.edukapro-header-wrap.is-scrolled .edukapro-topbar > .wp-block-group {
+	opacity: 0;
 }
 
 /* Badge chip NPSN/Akreditasi: pill halus di atas top bar gelap. */
@@ -93,6 +122,48 @@
 	margin-top: 0;
 }
 
+/* Header main: padding standar, transisi mulus saat shrink. */
+.edukapro-header-main {
+	transition: padding 250ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Scrolled: kurang padding header-main (spacing-30 -> ~0.5rem). */
+.edukapro-header-wrap.is-scrolled .edukapro-header-main {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+
+/* Logo: transisi width mulus. Override attribute block width via CSS. */
+.edukapro-header-main .wp-block-site-logo img {
+	transition: width 250ms cubic-bezier(0.23, 1, 0.32, 1), height 250ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Scrolled: logo mengecil 44 -> 32. */
+.edukapro-header-wrap.is-scrolled .edukapro-header-main .wp-block-site-logo img {
+	width: 32px;
+	height: auto;
+}
+
+/* Site-title: transisi font-size mulus. */
+.edukapro-header-main .wp-block-site-title {
+	transition: font-size 250ms cubic-bezier(0.23, 1, 0.32, 1), opacity 250ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Scrolled: site-title mengecil sedikit. */
+.edukapro-header-wrap.is-scrolled .edukapro-header-main .wp-block-site-title {
+	font-size: var(--wp--preset--font-size--medium);
+}
+
+/* Tagline: transisi opacity. */
+.edukapro-header-main .wp-block-site-tagline {
+	transition: opacity 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Scrolled: tagline fade out. */
+.edukapro-header-wrap.is-scrolled .edukapro-header-main .wp-block-site-tagline {
+	opacity: 0;
+}
+
 /* Pencarian icon-only: tombol surface, hover primary, hit area 40px. */
 .edukapro-search .wp-block-search__button {
 	min-width: 40px;
@@ -134,11 +205,18 @@
 	outline-offset: 2px;
 }
 
-/* Reduced motion: matikan transform, pertahankan transisi warna. */
+/* Reduced motion: matikan transform/motion, pertahankan transisi warna. */
 @media (prefers-reduced-motion: reduce) {
 	.edukapro-header-cta .wp-block-button__link,
 	.edukapro-search .wp-block-search__button,
-	.edukapro-topbar a {
+	.edukapro-topbar a,
+	.edukapro-header-wrap,
+	.edukapro-topbar,
+	.edukapro-topbar > .wp-block-group,
+	.edukapro-header-main,
+	.edukapro-header-main .wp-block-site-logo img,
+	.edukapro-header-main .wp-block-site-title,
+	.edukapro-header-main .wp-block-site-tagline {
 		transition: none !important;
 		transform: none !important;
 	}
