@@ -80,6 +80,44 @@ if ( ! function_exists( 'edukapro_spmb_overrides' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'edukapro_spmb_overrides' );
 
+if ( ! function_exists( 'edukapro_prestasi_styles' ) ) :
+	/**
+	 * Memuat prestasi.css pada template page-prestasi dan kategori prestasi.
+	 *
+	 * @since Eduka Pro 1.0
+	 */
+	function edukapro_prestasi_styles() {
+		if ( ! is_page_template( 'page-prestasi' ) && ! is_category( 'prestasi' ) ) {
+			return;
+		}
+
+		wp_enqueue_style(
+			'edukapro-prestasi',
+			get_theme_file_uri( 'assets/css/prestasi.css' ),
+			array( 'edukapro-style' ),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'edukapro_prestasi_styles' );
+
+if ( ! function_exists( 'edukapro_header_styles' ) ) :
+	/**
+	 * Gaya header Linear-like: sticky blur, top bar, CTA press feedback.
+	 *
+	 * @since Eduka Pro 1.0
+	 */
+	function edukapro_header_styles() {
+		wp_enqueue_style(
+			'edukapro-header',
+			get_theme_file_uri( 'assets/css/header.css' ),
+			array( 'edukapro-style' ),
+			wp_get_theme()->get( 'Version' )
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'edukapro_header_styles' );
+
 if ( ! function_exists( 'edukapro_block_styles' ) ) :
 	/**
 	 * Daftar gaya blok kustom tema.
