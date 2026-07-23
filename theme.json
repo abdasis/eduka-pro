@@ -432,6 +432,11 @@
 			"name": "page-full-width",
 			"postTypes": ["page"],
 			"title": "Page Full Width (SPMB)"
+		},
+		{
+			"name": "page-prestasi",
+			"postTypes": ["page"],
+			"title": "Prestasi Archive"
 		}
 	]
 }

@@ -1,0 +1,119 @@
+/* Prestasi archive styles — Linear-like polish, WP CSS vars only. */
+
+.prestasi-card {
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1),
+		box-shadow 200ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.prestasi-card img {
+	outline: 1px solid rgba(0, 0, 0, 0.1);
+	outline-offset: -1px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.prestasi-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04),
+			0 8px 24px rgba(0, 0, 0, 0.06);
+	}
+}
+
+.prestasi-card.prestasi-card:active,
+.prestasi-card:active {
+	transform: scale(0.96);
+}
+
+/* Stagger enter — @starting-style + nth-child delays. */
+.prestasi-card {
+	opacity: 1;
+	transform: translateY(0);
+	transition: opacity 300ms ease-out, transform 300ms ease-out;
+	@starting-style {
+		opacity: 0;
+		transform: translateY(8px);
+	}
+}
+
+.prestasi-card:nth-child(1) { transition-delay: 0ms; }
+.prestasi-card:nth-child(2) { transition-delay: 60ms; }
+.prestasi-card:nth-child(3) { transition-delay: 120ms; }
+.prestasi-card:nth-child(4) { transition-delay: 180ms; }
+.prestasi-card:nth-child(5) { transition-delay: 240ms; }
+.prestasi-card:nth-child(6) { transition-delay: 300ms; }
+
+/* Badge tingkat kompetisi — pill style via post-terms. */
+.prestasi-badge a,
+.prestasi-badge .wp-block-post-terms__link {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.25rem 0.625rem;
+	border-radius: 999px;
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 600;
+	border: 1px solid var(--wp--preset--color--border);
+	background: var(--wp--preset--color--surface);
+	color: var(--wp--preset--color--muted);
+	text-decoration: none;
+	line-height: 1.4;
+}
+
+.prestasi-badge a:hover {
+	text-decoration: none;
+	opacity: 0.9;
+}
+
+/* Stat number tabular nums. */
+.prestasi-stat-num {
+	font-variant-numeric: tabular-nums;
+}
+
+/* Hero heading text wrap. */
+.prestasi-hero-title {
+	text-wrap: balance;
+}
+
+/* Filter pills. */
+.prestasi-filter__pill {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 40px;
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	border: 1px solid var(--wp--preset--color--border);
+	background: var(--wp--preset--color--base);
+	color: var(--wp--preset--color--contrast);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 500;
+	text-decoration: none;
+	line-height: 1.4;
+	transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.prestasi-filter__pill:hover {
+	text-decoration: none;
+	border-color: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--primary);
+}
+
+.prestasi-filter__pill.is-active {
+	background: var(--wp--preset--color--primary);
+	color: var(--wp--preset--color--base);
+	border-color: var(--wp--preset--color--primary);
+}
+
+.prestasi-filter a:active {
+	transform: scale(0.96);
+}
+
+/* Reduced motion — drop movement, keep opacity/color. */
+@media (prefers-reduced-motion: reduce) {
+	.prestasi-card,
+	.prestasi-card:hover,
+	.prestasi-filter a {
+		transform: none !important;
+		transition: opacity 200ms ease !important;
+	}
+}
